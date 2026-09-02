@@ -1,6 +1,6 @@
 - Name: StyleMaskHelper
   Version: 1.4.0
-  DLL: StyleMaskHelper.dll
+  DLL: Code/bin/StyleMaskHelper.dll
   Dependencies:
     - Name: EverestCore
       Version: 1.5935.0

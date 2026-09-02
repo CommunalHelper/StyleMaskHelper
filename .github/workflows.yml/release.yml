@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ dev ]
+    paths:
+      - 'everest.yaml'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    
+    - name: Download Everest stripped lib
+      uses: robinraju/release-downloader@v1
+      with:
+        repository: EverestAPI/Everest
+        latest: true
+        fileName: lib-stripped.zip
+        
+    - name: Extract lib-stripped.zip
+      run: unzip lib-stripped.zip
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v5
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build with .NET Core
+      run: dotnet build --configuration Debug --no-restore
+      env:
+        CELESTEPREFIX: ${{ github.workspace }}/lib-stripped
+        
+    - name: Upload ZIP
+      uses: actions/upload-artifact@v6
+      with:
+        name: StyleMaskHelper
+        path: |
+          Ahorn
+          Code/bin
+          Effects
+          Graphics
+          Loenn
+          everest.yaml
+          LICENSE
+          !Code/bin/Debug
