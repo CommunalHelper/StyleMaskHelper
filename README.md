@@ -1,4 +1,4 @@
-# Adventure Helper
+# Style Mask Helper
 
 A helper for Celeste. Originally created by lilybeevee and now maintained by the Communal Helper organization.
 
