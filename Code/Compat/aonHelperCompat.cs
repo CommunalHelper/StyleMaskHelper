@@ -26,7 +26,7 @@ public static class aonHelperCompat {
         FgStylegroundBloomControllerCompat.RemoveAfterForegroundRenderAction(StylegroundMaskRenderer.aonHelperCompat_AfterRender);
     }
 
-    [ModImportName("aonHelper.FgStylegroundBloomControllerCompat")]
+    [ModImportName("aonHelper")]
     public static class FgStylegroundBloomControllerCompat {
         public static Action<Action<Level, bool>> AddBeforeForegroundRenderAction;
         public static Action<Action<Level, bool>> AddAfterForegroundRenderAction;
