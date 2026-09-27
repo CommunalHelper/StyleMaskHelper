@@ -1,3 +1,9 @@
+## [1.5.1] - 2026-09-27
+
+### Changed
+- Use updated aonHelper ModInterop name. @aonkeeper4
+
+
 ## [1.5.0] - 2026-09-02
 
 ### Added
